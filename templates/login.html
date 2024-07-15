@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <div class="standard-center">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Login</h1>
+        <form style="display: flex; align-items: center; flex-direction: column;" action="/login" method="post" autocomplete="off">
+            <input name="id" class="input-box half-width" style="min-width: 400px;" type="text" autofocus required placeholder="Operator ID">
+            <input name="password" class="input-box half-width" style="min-width: 400px; margin-top: 1rem;" type="password" autofocus required placeholder="Password">
+            <button type="submit" class="primary-btn half-width" style="border: 0; min-width: 400px; margin-top: 1rem;">Login</button>
+        </form>
+    </div>
+{% endblock%}

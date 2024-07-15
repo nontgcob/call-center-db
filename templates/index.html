@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Follow up call
+{% endblock %}
+
+{% block main %}
+    <div class="standard-center">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Follow up call</h1>
+        <form action="/" method="post" autocomplete="off">
+            <!-- watch this cs50 AJAX demonstration https://www.youtube.com/live/oVA0fD13NGI?si=uE_q2MppsAJ5AFt1&t=7783 -->
+            <input name="problem_id" id="problem-selection" class="input-box full-width" type="search" autofocus required placeholder="Problem ID">
+            <ul style="padding-left: 0;"></ul>
+            
+            <script>
+                let input = document.querySelector('input');
+                input.addEventListener('input', async function() {
+                    let response = await fetch('search?q=' + input.value);
+                    let problems = await response.text();
+                    document.querySelector('ul').innerHTML = problems;
+                });
+            </script>
+
+            <div style="display: flex; justify-content: space-between;">
+                <input name="caller_id" class="input-box half-width" type="text" autofocus required placeholder="Caller ID">
+                <input disabled class="input-box half-width" style="background-color: #ededed;" type="text" placeholder="Operator ID: {{ session['user_id'] }}">
+            </div>
+            <textarea name="reason" class="input-box full-width" style="margin: 1rem 0; height: 5rem;" type="text" autofocus required placeholder="Reason for call"></textarea>
+            <button class="primary-btn full-width" style="border: 0;" type="submit">Record</button>
+        </form>
+    </div>
+{% endblock%}

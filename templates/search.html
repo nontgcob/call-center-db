@@ -1,0 +1,18 @@
+<ul id="all-options" style="padding: 0 .2rem">
+    {% for problem in problems %}
+        <li onClick="
+        function reply_click(e) {
+            e = e || window.event;
+            e = e.currentTarget;
+            document.getElementById('problem-selection').value = (e.children[0].innerText);
+        
+            // Hide or remove the options
+            document.getElementById('all-options').style.display = 'none';
+        }
+        reply_click();"
+        class="problem-options" style="cursor: pointer;">
+            <div style="width: 2rem">{{ problem['id'] }}</div>
+            <div style="margin-left: 1rem">{{ problem['description'] }}</div>
+        </li>
+    {% endfor %}
+</ul>

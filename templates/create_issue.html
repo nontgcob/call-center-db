@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create issue
+{% endblock %}
+
+{% block main %}
+    <div class="standard-center" style="height: 40rem;">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Create a new issue</h1>
+        <form action="/create_issue" method="post" autocomplete="off">
+            <div class="half-width-container">
+                <input name="caller_id" class="input-box half-width" type="text" autofocus required placeholder="Caller ID">
+                <input disabled class="input-box half-width" style="background-color: #ededed;" type="text" placeholder="Operator ID: {{ session['user_id'] }}">
+            </div>
+            <input name="reason" class="input-box full-width" style="margin-top: 1rem;" type="text" autofocus required placeholder="Reason for call"></input>
+            <textarea name="description" class="input-box full-width" style="margin-top: 1rem; height: 5rem;" type="text" autofocus required placeholder="Problem description"></textarea>
+            <select name="problem_type" class="input-box full-width" style="margin-top: .6rem; padding: .7rem;" required id="problem-type">
+                <option hidden>Problem type</option>
+                <option value="os">Operating system</option>
+                <option value="software">Software program</option>
+                <option value="hardware">Hardware device</option>
+            </select>
+            <div class="half-width-special-container">
+                <input name="serial_number" class="input-box half-width-special" type="text" autofocus required placeholder="Device serial number / -">
+                <input name="product_key" class="input-box half-width-special" type="text" autofocus required placeholder="Software product key 1, 2, ... / -">
+            </div>
+            <button class="primary-btn full-width" style="border: 0; margin-top: 1rem;" type="submit">Create new issue</button>
+        </form>
+    </div>
+{% endblock%}

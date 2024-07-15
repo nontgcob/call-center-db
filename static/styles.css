@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.branding {
+    display: flex;
+    flex-direction: row;
+}
+
+.no-decor {
+    text-decoration: none;
+    color: #000000;
+}
+
+.primary-btn {
+    background-color: #008E4C;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    border-radius: 11px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.primary-btn:hover {
+    background-color: #007840;
+}
+
+.underline_hover:hover {
+    text-decoration: underline !important;
+}
+
+nav {
+    width: 100%;
+    height: 66px;
+    box-shadow: 0px 2px 4px #00000033;
+    padding: 0 1.6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.credit {
+    height: fit-content;
+    width: fit-content;
+    border-top: 1px solid #008E4C;
+    border-right: 1px solid #008E4C;
+    border-bottom: 1px solid #008E4C;
+    position: fixed;
+    bottom: 30px;
+    padding: 8px 24px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    color: #008E4C;
+    font-size: .9rem;
+    box-shadow: 0px 2px 4px #00000033;
+    background-color: #FFFFFF;
+}
+
+h1 {
+    font-size: 2.4rem !important;
+    font-weight: 600 !important;
+}
+
+h2 {
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+}
+
+h3 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
+
+.standard-center {
+    width: 64%;
+    min-width: 420px;
+    max-width: 1400px;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+
+.small-standard-center {
+    width: 54%;
+    min-width: 420px;
+    max-width: 1300px;
+    height: 100 vh;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+
+.input-box {
+    height: 3rem;
+    border: 2px solid hsla(0, 0%, 0%, 0.30);
+    border-radius: 16px;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+}
+
+.full-width {
+    width: 100%
+}
+
+.half-width-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.half-width {
+    width: 49.4%;
+}
+
+.half-width-special-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.half-width-special {
+    width: 49.4%;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 955px) {
+    .half-width-special-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: none;
+    }
+
+    .half-width-special {
+        width: 100%;
+    }
+}
+
+.problem-options {
+    list-style: none;
+    background-color: #0000001a;
+    margin-top: .2rem;
+    padding: .2rem 1.1rem;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+}
