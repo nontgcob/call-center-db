@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -310,3 +312,7 @@ def create_issues():
         # write the report
         # record demo video
         # submit the assignment with everything in zip
+
+import waitress
+if __name__ == '__main__':
+  waitress.serve(app, host="0.0.0.0", port=5000, threads=4)
